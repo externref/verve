@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+
 	let mounted = false;
 	onMount(() => {
 		mounted = true;
@@ -21,16 +22,26 @@
 					</p>
 					<a href="/community">
 						<button
-							class="text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2 mr-2"
-							>Community</button
+							class="text-sm md:text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2 mr-2"
+							><i class="bi bi-person-raised-hand"></i> Community</button
 						></a
 					><a href="/stats">
-						<button class="text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2"
-							>Stats</button
+						<button
+							class="text-sm md:text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2"
+							><i class="bi bi-bar-chart-line-fill"></i> Stats</button
 						>
-					</a><a href="#contacts">
-						<button class="text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2"
-							>Contact</button
+					</a><a
+						href="https://docs.google.com/forms/d/e/1FAIpQLScwpHeIiHmgKx1P1qk9VlpuKGQeQC34eBLoy0lz18wULN6Mlw/viewform?usp=sf_link"
+					>
+						<button
+							class="text-sm md:text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2"
+							><i class="bi bi-pencil-square"></i> Contribute</button
+						>
+					</a>
+					<br class="hidden md:block" />
+					<a href="/start">
+						<button class="text-sm md:text-lg bg-catp-lavender px-2 mt-2 rounded text-catp-crust"
+							><i class="bi bi-box-arrow-up-right"></i> Start your Green journey now!</button
 						>
 					</a>
 				</div>
@@ -68,11 +79,11 @@
 				Generation of <span class="text-green-300">Green energy</span>
 			</div>
 			<div class="md:flex">
-				<img
+				<!-- <img
 					alt="generation"
 					class="md:w-[400px] md:h-[220px] mt-5 md:mt-20 md:ml-5 md:mb-5 rounded-sm inline-block align-middle"
 					src="/solar_energy_generation.jpeg"
-				/>
+				/> -->
 				<div class="md:p-3">
 					<b>Solar Power:</b> Solar panels (photovoltaic cells) convert sunlight directly into
 					electricity. Solar thermal systems use sunlight to heat water or other fluids, which can
@@ -102,6 +113,25 @@
 					capture energy from the surface motion of the ocean.
 				</div>
 			</div>
+		</div>
+		<div class="md:m-4 text-catp-flamingo">
+			<div class="text-3xl md:text-right font-semibold text-green-300 my-3">Recieve Updates</div>
+			Stay updated with the latest happenings and statistics around the country. We will be mailing any
+			updates related to features on the websites and posts related to your interests on your mail!
+			<form method="POST">
+				<input
+					type="email"
+					name="email_id"
+					id="email_id"
+					class="px-2 py-1 rounded-md outline-none text-black"
+				/>
+				<button
+					formaction="?/registerMail"
+					type="submit"
+					class="text-lg font-semibold bg-green-400 text-catp-mantle rounded px-2 mt-2 mr-2"
+					>Register</button
+				>
+			</form>
 		</div>
 	</div>
 {/if}

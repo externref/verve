@@ -18,7 +18,7 @@ export default class DatabaseHandler {
 			_data.entries()
 		) as unknown as UserRecievePayload;
 		let userRes = await this.pool.query<User>(
-			`INSERT INTO verve_users VALUES ( $1, $2, $3, $4, CURRENT_TIMESTAMP, NULL, NULL, $5 ) RETURNING *`,
+			`INSERT INTO verve_authors VALUES ( $1, $2, $3, $4, CURRENT_TIMESTAMP, NULL, NULL, $5 ) RETURNING *`,
 			[
 				this.snowflake(),
 				data.name,
