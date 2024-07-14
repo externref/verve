@@ -12,9 +12,16 @@ CREATE TABLE "verve_posts"(
 );
 ALTER TABLE
     "verve_posts" ADD PRIMARY KEY("id");
+CREATE TABLE "signup_codes"(
+    "email" VARCHAR(255) NOT NULL,
+    "code" INTEGER NOT NULL
+);
+ALTER TABLE
+    "signup_codes" ADD PRIMARY KEY("email");
 CREATE TABLE "verve_users"(
     "id" BIGINT NOT NULL,
     "name" VARCHAR(255) NOT NULL,
+    "email" VARCHAR(255) NOT NULL,
     "state" VARCHAR(255) NOT NULL,
     "yearOfBirth" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL,
@@ -24,6 +31,8 @@ CREATE TABLE "verve_users"(
 );
 ALTER TABLE
     "verve_users" ADD PRIMARY KEY("id");
+ALTER TABLE
+    "verve_users" ADD CONSTRAINT "verve_users_email_unique" UNIQUE("email");
 ALTER TABLE
     "verve_users" ADD CONSTRAINT "verve_users_lastpostid_foreign" FOREIGN KEY("lastPostId") REFERENCES "verve_posts"("id");
 ALTER TABLE
