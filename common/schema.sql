@@ -29,6 +29,7 @@ CREATE TABLE "verve_users"(
     "lastPostId" BIGINT NULL,
     "password" VARCHAR(255) NOT NULL
 );
+
 ALTER TABLE
     "verve_users" ADD PRIMARY KEY("id");
 ALTER TABLE
