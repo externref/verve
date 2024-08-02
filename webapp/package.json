@@ -16,7 +16,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.5.18",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@types/node": "^20.14.10",
+		"@types/node": "^22.0.3",
 		"@types/nodemailer": "^6.4.15",
 		"@types/pg": "^8.11.6",
 		"autoprefixer": "^10.4.19",
